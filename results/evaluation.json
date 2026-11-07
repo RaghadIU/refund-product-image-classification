@@ -1,0 +1,96 @@
+{
+  "classes": [
+    "Backpacks",
+    "Belts",
+    "Briefs",
+    "Formal Shoes",
+    "Socks"
+  ],
+  "total_images": 3703,
+  "training_images": 2592,
+  "validation_images": 555,
+  "test_images": 556,
+  "test_accuracy": 0.9982014388489209,
+  "classification_report": {
+    "Backpacks": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 109.0
+    },
+    "Belts": {
+      "precision": 0.991869918699187,
+      "recall": 1.0,
+      "f1-score": 0.9959183673469387,
+      "support": 122.0
+    },
+    "Briefs": {
+      "precision": 1.0,
+      "recall": 0.9921259842519685,
+      "f1-score": 0.9960474308300395,
+      "support": 127.0
+    },
+    "Formal Shoes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 95.0
+    },
+    "Socks": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 103.0
+    },
+    "accuracy": 0.9982014388489209,
+    "macro avg": {
+      "precision": 0.9983739837398374,
+      "recall": 0.9984251968503937,
+      "f1-score": 0.9983931596353957,
+      "support": 556.0
+    },
+    "weighted avg": {
+      "precision": 0.9982160612973036,
+      "recall": 0.9982014388489209,
+      "f1-score": 0.9982015549132043,
+      "support": 556.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      109,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      122,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      126,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      95,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      103
+    ]
+  ]
+}

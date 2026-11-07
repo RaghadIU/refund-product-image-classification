@@ -1,0 +1,231 @@
+[2026-10-30 22:00:02] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-10-30 22:00:02] Starting prepare_daily_images.py...
+[2026-10-30 22:00:10] Eligible images available for this run: 3703
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-10-30 22:00:10] prepare_daily_images.py completed successfully.
+[2026-10-30 22:00:10] Flask API is already running.
+[2026-10-30 22:00:10] Starting batch_predict.py...
+[2026-10-30 22:01:00] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261030_190011.csv
+[2026-10-30 22:01:00] batch_predict.py completed successfully.
+[2026-10-30 22:01:00] Starting monitoring.py...
+[2026-10-30 22:01:01] {
+  "timestamp_utc": "2026-10-30T19:01:01.038364+00:00",
+  "source_file": "batch_predictions_20261030_190011.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9945,
+  "low_confidence_predictions_below_0_60": 0
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-10-30 22:01:01] monitoring.py completed successfully.
+[2026-10-30 22:01:01] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-10-30 22:01:01] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-10-31 22:00:03] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-10-31 22:00:03] Starting prepare_daily_images.py...
+[2026-10-31 22:00:08] Eligible images available for this run: 3203
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-10-31 22:00:08] prepare_daily_images.py completed successfully.
+[2026-10-31 22:00:08] Flask API is already running.
+[2026-10-31 22:00:08] Starting batch_predict.py...
+[2026-10-31 22:01:01] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261031_190009.csv
+[2026-10-31 22:01:01] batch_predict.py completed successfully.
+[2026-10-31 22:01:01] Starting monitoring.py...
+[2026-10-31 22:01:01] {
+  "timestamp_utc": "2026-10-31T19:01:01.259563+00:00",
+  "source_file": "batch_predictions_20261031_190009.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9949,
+  "low_confidence_predictions_below_0_60": 0
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-10-31 22:01:01] monitoring.py completed successfully.
+[2026-10-31 22:01:01] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-10-31 22:01:01] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-01 22:00:03] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-11-01 22:00:03] Starting prepare_daily_images.py...
+[2026-11-01 22:00:11] Eligible images available for this run: 2703
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-01 22:00:11] prepare_daily_images.py completed successfully.
+[2026-11-01 22:00:11] Flask API is already running.
+[2026-11-01 22:00:11] Starting batch_predict.py...
+[2026-11-01 22:00:58] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261101_190011.csv
+[2026-11-01 22:00:58] batch_predict.py completed successfully.
+[2026-11-01 22:00:58] Starting monitoring.py...
+[2026-11-01 22:00:58] {
+  "timestamp_utc": "2026-11-01T19:00:58.907514+00:00",
+  "source_file": "batch_predictions_20261101_190011.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.992,
+  "low_confidence_predictions_below_0_60": 1
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-01 22:00:58] monitoring.py completed successfully.
+[2026-11-01 22:00:58] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-01 22:00:58] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-02 22:00:02] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-11-02 22:00:02] Starting prepare_daily_images.py...
+[2026-11-02 22:00:11] Eligible images available for this run: 2203
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-02 22:00:11] prepare_daily_images.py completed successfully.
+[2026-11-02 22:00:12] Flask API is already running.
+[2026-11-02 22:00:12] Starting batch_predict.py...
+[2026-11-02 22:01:04] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261102_190013.csv
+[2026-11-02 22:01:04] batch_predict.py completed successfully.
+[2026-11-02 22:01:04] Starting monitoring.py...
+[2026-11-02 22:01:04] {
+  "timestamp_utc": "2026-11-02T19:01:04.954119+00:00",
+  "source_file": "batch_predictions_20261102_190013.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.994,
+  "low_confidence_predictions_below_0_60": 1
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-02 22:01:04] monitoring.py completed successfully.
+[2026-11-02 22:01:04] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-02 22:01:04] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-03 22:00:03] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-11-03 22:00:03] Starting prepare_daily_images.py...
+[2026-11-03 22:00:12] Eligible images available for this run: 1703
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-03 22:00:12] prepare_daily_images.py completed successfully.
+[2026-11-03 22:00:12] Flask API is already running.
+[2026-11-03 22:00:12] Starting batch_predict.py...
+[2026-11-03 22:00:58] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261103_190013.csv
+[2026-11-03 22:00:58] batch_predict.py completed successfully.
+[2026-11-03 22:00:58] Starting monitoring.py...
+[2026-11-03 22:00:59] {
+  "timestamp_utc": "2026-11-03T19:00:59.092297+00:00",
+  "source_file": "batch_predictions_20261103_190013.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9895,
+  "low_confidence_predictions_below_0_60": 1
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-03 22:00:59] monitoring.py completed successfully.
+[2026-11-03 22:00:59] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-03 22:00:59] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-04 22:00:02] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-11-04 22:00:02] Starting prepare_daily_images.py...
+[2026-11-04 22:00:07] Eligible images available for this run: 1203
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-04 22:00:07] prepare_daily_images.py completed successfully.
+[2026-11-04 22:00:08] Flask API is already running.
+[2026-11-04 22:00:08] Starting batch_predict.py...
+[2026-11-04 22:00:56] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261104_190008.csv
+[2026-11-04 22:00:56] batch_predict.py completed successfully.
+[2026-11-04 22:00:56] Starting monitoring.py...
+[2026-11-04 22:00:56] {
+  "timestamp_utc": "2026-11-04T19:00:56.973113+00:00",
+  "source_file": "batch_predictions_20261104_190008.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9919,
+  "low_confidence_predictions_below_0_60": 1
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-04 22:00:56] monitoring.py completed successfully.
+[2026-11-04 22:00:56] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-04 22:00:56] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-05 22:06:07] ========== NIGHTLY BATCH RUN STARTED ==========
+[2026-11-05 22:06:07] Starting prepare_daily_images.py...
+[2026-11-05 22:06:15] Eligible images available for this run: 703
+New images copied to incoming: 500
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-05 22:06:15] prepare_daily_images.py completed successfully.
+[2026-11-05 22:06:15] Flask API is already running.
+[2026-11-05 22:06:15] Starting batch_predict.py...
+[2026-11-05 22:07:08] Images found: 500
+Results written: 500
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261105_190616.csv
+[2026-11-05 22:07:08] batch_predict.py completed successfully.
+[2026-11-05 22:07:08] Starting monitoring.py...
+[2026-11-05 22:07:08] {
+  "timestamp_utc": "2026-11-05T19:07:08.290254+00:00",
+  "source_file": "batch_predictions_20261105_190616.csv",
+  "images_in_results": 500,
+  "successful_predictions": 500,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9936,
+  "low_confidence_predictions_below_0_60": 0
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-05 22:07:08] monitoring.py completed successfully.
+[2026-11-05 22:07:08] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-05 22:07:08] ========== NIGHTLY BATCH RUN FINISHED ==========
+[2026-11-05 22:21:49] Starting prepare_daily_images.py...
+[2026-11-06 21:56:00] Eligible images available for this run: 203
+New images copied to incoming: 203
+Used-image registry saved to: C:\Users\HP\Desktop\refund-classification\results\used_images.csv
+[2026-11-06 21:56:00] prepare_daily_images.py completed successfully.
+[2026-11-06 21:56:02] Flask API is already running.
+[2026-11-06 21:56:02] Starting batch_predict.py...
+[2026-11-06 21:56:25] Images found: 203
+Results written: 203
+Errors: 0
+CSV saved to: C:\Users\HP\Desktop\refund-classification\results\batch_predictions_20261106_185606.csv
+[2026-11-06 21:56:25] batch_predict.py completed successfully.
+[2026-11-06 21:56:25] Starting monitoring.py...
+[2026-11-06 21:56:25] {
+  "timestamp_utc": "2026-11-06T18:56:25.365934+00:00",
+  "source_file": "batch_predictions_20261106_185606.csv",
+  "images_in_results": 203,
+  "successful_predictions": 203,
+  "errors": 0,
+  "success_rate": 1.0,
+  "average_confidence": 0.9893,
+  "low_confidence_predictions_below_0_60": 1
+}
+
+Monitoring log saved to: C:\Users\HP\Desktop\refund-classification\results\monitoring_log.jsonl
+[2026-11-06 21:56:25] monitoring.py completed successfully.
+[2026-11-06 21:56:25] NIGHTLY BATCH RUN COMPLETED SUCCESSFULLY.
+[2026-11-06 21:56:25] ========== NIGHTLY BATCH RUN FINISHED ==========

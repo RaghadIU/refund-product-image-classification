@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Product Classifier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            color: #263247;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #344767;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #778399;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 2px dashed #aab6c8;
+            border-radius: 14px;
+            padding: 30px 15px;
+            text-align: center;
+            background: #fafbfe;
+        }
+
+        .upload-area p {
+            color: #667085;
+        }
+
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+        }
+
+        #preview {
+            display: none;
+            max-width: 100%;
+            max-height: 280px;
+            margin: 20px auto 0;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #536b91;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #405779;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 18px;
+            color: #667085;
+        }
+
+        .result {
+            display: none;
+            margin-top: 28px;
+            padding: 22px;
+            border-radius: 12px;
+            background: #f4f7fb;
+        }
+
+        .result h2 {
+            margin-top: 0;
+            color: #344767;
+        }
+
+        .prediction {
+            font-size: 25px;
+            font-weight: bold;
+            color: #287a55;
+            margin: 12px 0;
+        }
+
+        .probability-row {
+            margin-top: 15px;
+        }
+
+        .probability-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .progress {
+            height: 9px;
+            background: #dfe5ee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #536b91;
+            border-radius: 10px;
+        }
+
+        .error {
+            color: #c0392b !important;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Refund Product Classifier</h1>
+
+        <p class="subtitle">
+            Upload a product image to identify its category.
+        </p>
+
+        <div class="upload-area">
+            <h3>Upload Product Image</h3>
+            <p>Select an image from your device.</p>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+            >
+
+            <img id="preview" alt="Selected product image">
+        </div>
+
+        <button id="classifyButton" disabled>
+            Classify Image
+        </button>
+
+        <p id="status"></p>
+
+        <section class="result" id="result">
+            <h2>Prediction Result</h2>
+
+            <p>Predicted Category:</p>
+            <div class="prediction" id="category"></div>
+
+            <p>
+                Confidence:
+                <strong id="confidence"></strong>
+            </p>
+
+            <h3>Class Probabilities</h3>
+            <div id="probabilities"></div>
+        </section>
+
+    </main>
+
+    <script>
+        const imageInput = document.getElementById("imageInput");
+        const preview = document.getElementById("preview");
+        const classifyButton = document.getElementById("classifyButton");
+        const statusText = document.getElementById("status");
+        const resultSection = document.getElementById("result");
+
+        let selectedFile = null;
+        let previewUrl = null;
+
+        imageInput.addEventListener("change", function () {
+            const file = this.files[0];
+
+            resultSection.style.display = "none";
+            statusText.textContent = "";
+            statusText.classList.remove("error");
+
+            if (previewUrl) {
+                URL.revokeObjectURL(previewUrl);
+                previewUrl = null;
+            }
+
+            if (!file) {
+                selectedFile = null;
+                preview.style.display = "none";
+                classifyButton.disabled = true;
+                return;
+            }
+
+            if (!file.type.startsWith("image/")) {
+                selectedFile = null;
+                preview.style.display = "none";
+                classifyButton.disabled = true;
+                statusText.textContent = "Please select a valid image file.";
+                statusText.classList.add("error");
+                return;
+            }
+
+            selectedFile = file;
+            previewUrl = URL.createObjectURL(file);
+
+            preview.src = previewUrl;
+            preview.style.display = "block";
+            classifyButton.disabled = false;
+        });
+
+        classifyButton.addEventListener("click", async function () {
+            if (!selectedFile) return;
+
+            const formData = new FormData();
+            formData.append("image", selectedFile);
+
+            classifyButton.disabled = true;
+            statusText.textContent = "Classifying image, please wait...";
+            statusText.classList.remove("error");
+            resultSection.style.display = "none";
+
+            try {
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || "Prediction failed.");
+                }
+
+                document.getElementById("category").textContent =
+                    data.predicted_category;
+
+                const confidenceValue =
+                    data.probabilities[data.predicted_category];
+
+                document.getElementById("confidence").textContent =
+                    (confidenceValue * 100).toFixed(2) + "%";
+
+                const probabilitiesContainer =
+                    document.getElementById("probabilities");
+
+                probabilitiesContainer.innerHTML = "";
+
+                for (const [name, probability] of
+                    Object.entries(data.probabilities)) {
+
+                    const percentage = probability * 100;
+
+                    const row = document.createElement("div");
+                    row.className = "probability-row";
+
+                    const label = document.createElement("div");
+                    label.className = "probability-label";
+
+                    const categoryName = document.createElement("span");
+                    categoryName.textContent = name;
+
+                    const percentageText = document.createElement("strong");
+                    percentageText.textContent = percentage.toFixed(2) + "%";
+
+                    label.append(categoryName, percentageText);
+
+                    const progress = document.createElement("div");
+                    progress.className = "progress";
+
+                    const bar = document.createElement("div");
+                    bar.className = "progress-bar";
+                    bar.style.width = percentage + "%";
+
+                    progress.appendChild(bar);
+                    row.append(label, progress);
+                    probabilitiesContainer.appendChild(row);
+                }
+
+                resultSection.style.display = "block";
+                statusText.textContent = "Classification completed successfully.";
+
+            } catch (error) {
+                statusText.textContent = error.message;
+                statusText.classList.add("error");
+            } finally {
+                classifyButton.disabled = !selectedFile;
+            }
+        });
+    </script>
+
+</body>
+</html>
