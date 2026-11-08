@@ -238,9 +238,3 @@ python run_nightly.py
 - Improve predictions for unfamiliar product images.
 - Deploy the system to a cloud environment.
 - Develop advanced monitoring dashboards and reports.
-
-## 16. Author
-
-**Project:** Refund Product Image Classification System  
-**Course:** Applied Artificial Intelligence  
-**Focus:** Image Classification and Batch Processing
